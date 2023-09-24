@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ваш ответ!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleansfw.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+<body>
+    <div class="user-info">
+        <img src="{{ url_for('static', filename='images/user.png') }}" alt="User" class="user-image">
+        <div class="user-question">
+            <p>{{ question }}</p>
+            <button class="copy-button" onclick="copyToClipboard('{{ question }}')">Скопировать</button>
+        </div>
+    </div>
+
+    <div class="chatgpt-info">
+        <img src="{{ url_for('static', filename='images/gpt.png') }}" alt="ChatGPT" class="chatgpt-image">
+        <div class="chatgpt-text">
+            <p>{{ answer }}</p>
+            <button class="copy-button" onclick="copyToClipboard('{{ answer }}')">Скопировать</button>
+        </div>
+    </div>
+
+    <form method="GET" action="/">
+        <button type="submit">Вернуться</button>
+    </form>
+
+    <script>
+        function copyToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            
+            alert("Текст скопирован в буфер обмена!");
+        }
+    </script>
+    <div class="footer">
+        <div class="contact-info">
+            <p>Почта для техподдержки: <a href="mailto:minehack29@gmail.com">minehack29@gmail.com</a></p>
+            <p>Github: <a href="https://github.com/FluxProv" target="_blank">https://github.com/FluxProv</a></p>
+        </div>
+        <div class="support-button">
+            <a href="https://www.donationalerts.com/r/hvdonat" target="_blank">Поддержать автора</a>
+        </div>
+    </div>
+</body>
+</html>

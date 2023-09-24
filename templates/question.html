@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT++</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+</head>
+<body>
+    <h1>ChatGPT++</h1>
+    <form method="POST" action="/ask">
+        <div class="input-container">
+            <textarea name="question" placeholder="Отправить сообщение" class="rounded-input" id="message-input"></textarea>
+            <input type="image" src="{{ url_for('static', filename='images/send.png') }}" alt="Send" class="send-button">
+        </div>
+        <p class="char-count">(0 / 7500)</p>
+    </form>
+    <script>
+        const messageInput = document.getElementById('message-input');
+        const charCount = document.querySelector('.char-count');
+
+        messageInput.addEventListener('input', function() {
+            const currentLength = this.value.length;
+            charCount.textContent = `(${currentLength} / 7500)`;
+
+            // Перенос строки каждые 45 символов
+            if (currentLength > 0 && currentLength % 45 === 0) {
+                this.value += '\n';
+            }
+        });
+
+        // Обработчик нажатия клавиш
+        messageInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && event.shiftKey) {
+                // Расширение блока при зажатой клавише Shift + Enter
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            }
+        });
+    </script>
+    <div class="footer">
+        <div class="contact-info">
+            <p>Почта для техподдержки: <a href="mailto:minehack29@gmail.com">minehack29@gmail.com</a></p>
+            <p>Github: <a href="https://github.com/FluxProv" target="_blank">https://github.com/FluxProv</a></p>
+        </div>
+        <div class="support-button">
+            <a href="https://www.donationalerts.com/r/hvdonat" target="_blank">Поддержать автора</a>
+        </div>
+    <div class="toggle-button" id="theme-toggle">
+        <div class="circle"></div>
+    </div>
+    </div>
+</body>
+</body>
+</html>

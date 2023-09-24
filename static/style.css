@@ -1,0 +1,161 @@
+/* static/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c0c11; /* Чуть более тёмный серый фон */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Изменим направление на вертикальное */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: scale(1.5); /* Увеличим масштаб на 50% */
+    color: #fff; /* Белый цвет текста */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #2e8b57; /* Сине-зелёный цвет для заголовка h1 */
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Для позиционирования char-count */
+}
+
+textarea[name="question"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    background-color: #25242b; /* Цвет фона поля ввода */
+    border: 1px solid #808080; /* Тёмно-серая граница */
+    border-radius: 10px; /* Закругление углов */
+    color: #808080; /* Тёмно-серый текст */
+    background-image: url('{{ url_for('static', filename='images/send.png') }}'); /* Изображение внутри поля ввода */
+    background-size: 24px 24px; /* Размер изображения */
+    background-repeat: no-repeat;
+    background-position: right center; /* Расположение изображения справа по центру */
+    padding-right: 32px; /* Отступ справа, чтобы изображение не перекрывало текст */
+    min-height: 50px; /* Минимальная высота для начального отображения */
+    resize: none; /* Запрет на изменение размера текстового поля */
+}
+
+/* Тёмно-серый цвет для текста на белом фоне */
+p {
+    color: #808080;
+}
+
+.char-count {
+    position: absolute;
+    bottom: 5px; /* Отступ снизу */
+    left: 50%; /* Положение по центру по горизонтали */
+    transform: translateX(-50%); /* Центрируем горизонтально */
+    color: #2e8b57; /* Сине-зелёный цвет */
+    font-size: 14px; /* Маленький размер шрифта */
+}
+
+textarea[name="question"] {
+    /* ... */
+    padding-right: 32px; /* Отступ справа, чтобы изображение не перекрывало текст */
+    min-height: 50px; /* Минимальная высота для начального отображения */
+    resize: none; /* Запрет на изменение размера текстового поля */
+}
+
+/* ... */
+
+input[type="image"] {
+    width: 32px; /* Увеличиваем ширину кнопки */
+    height: 32px; /* Увеличиваем высоту кнопки */
+    border: none;
+    border-radius: 20%; /* Добавляем закругленные края */
+    background-color: #2e8b57; /* Зелёный цвет фона */
+    margin-left: -35px; /* Отступ влево, чтобы совместить с текстовым полем */
+    cursor: pointer;
+}
+
+.char-count {
+    position: relative; /* Изменяем позицию на относительную */
+    top: 10px; /* Поднимаем счетчик на 10 пикселей относительно его исходной позиции */
+    color: #808080; /* Серый цвет текста */
+    font-size: 14px; /* Маленький размер шрифта */
+}
+
+.footer {
+    background-color: #091426;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    position: absolute; /* Установите абсолютное позиционирование */
+    bottom: 0; /* Переместите вниз */
+    width: 100%; /* Растяните на всю ширину */
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #00f; /* Синий цвет ссылки */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.support-button a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00f; /* Синий цвет кнопки */
+    color: #fff; /* Белый цвет текста кнопки */
+    text-decoration: none;
+    border-radius: 5px; /* Закругляем углы кнопки */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+}
+
+.support-button a:hover {
+    background-color: #0055a4; /* Темно-синий цвет фона кнопки при наведении */
+}
+
+.toggle-button {
+    position: fixed;
+    top: 20px; /* Отступ от верха */
+    right: 20px; /* Отступ справа */
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 3px;
+    transition: margin 0.3s;
+}
+
+/* Тёмная тема */
+.dark-theme .toggle-button {
+    background-color: #333;
+}
+
+.dark-theme .circle {
+    margin-left: 27px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

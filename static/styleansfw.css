@@ -1,0 +1,150 @@
+/* static/styleansfw.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c0c11; /* Чуть более тёмный серый фон */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Изменим направление на вертикальное */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: scale(1.5); /* Увеличим масштаб на 50% */
+    color: #fff; /* Белый цвет текста */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #2e8b57; /* Сине-зелёный цвет для заголовка h1 */
+}
+
+p {
+    text-align: center;
+    color: #808080; /* Тёмно-серый цвет для текста */
+}
+
+/* Уменьшим размер шрифта для ответа ChatGPT */
+h1 + p {
+    font-size: 18px;
+}
+
+/* Стили для блоков ответа */
+h1 {
+    background-color: #25242b; /* Цвет фона для заголовка "ВЫ" и "ChatGPT" */
+    padding: 10px;
+    border-radius: 10px; /* Закругление углов */
+    width: 50%;
+    margin: 0 auto 10px;
+}
+
+p {
+    background-color: #25242b; /* Цвет фона для текста ответа */
+    padding: 10px;
+    border-radius: 10px; /* Закругление углов */
+    width: auto; /* Автоматическая ширина под текст */
+    max-width: 100%; /* Максимальная ширина 100% */
+    margin: 0 auto 20px;
+    word-wrap: break-word; /* Перенос строки при необходимости */
+    max-width: 50%; /* Максимальная ширина 50% */
+    overflow-wrap: break-word; /* Перенос строки при необходимости */
+}
+
+button[type="submit"] {
+    background-color: #2e8b57; /* Зелёный цвет фона */
+    border: none;
+    border-radius: 10px; /* Закругление углов */
+    color: #fff; /* Белый текст */
+    padding: 10px 20px; /* Внутренние отступы */
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #257943; /* Зелёный цвет фона при наведении */
+}
+
+.user-info, .chatgpt-info {
+    display: flex;
+    flex-wrap: wrap; /* Перенос на новую строку при необходимости */
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-image, .chatgpt-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%; /* Добавляем закругленные края */
+}
+
+.user-question, .chatgpt-text {
+    background-color: #25242b; /* Цвет фона для текста ответа */
+    padding: 10px;
+    border-radius: 10px; /* Закругление углов */
+    width: auto; /* Автоматическая ширина под текст */
+    max-width: 100%; /* Максимальная ширина 100% */
+    margin: 0; /* Убираем отступ */
+    word-wrap: break-word; /* Перенос строки при необходимости */
+    max-width: 50%; /* Максимальная ширина 50% */
+    overflow-wrap: break-word; /* Перенос строки при необходимости */
+}
+
+/* Добавляем перенос строки каждые 45 строк */
+.user-question p:nth-of-type(45n)::after,
+.chatgpt-text p:nth-of-type(45n)::after {
+    content: '\A'; /* Добавляем перенос строки */
+    white-space: pre-line; /* Разрешаем отображение переносов строк */
+}
+
+.copy-button {
+    background-color: #2e8b57; /* Зелёный цвет фона */
+    border: none;
+    border-radius: 10px; /* Закругление углов */
+    color: #fff; /* Белый текст */
+    padding: 5px 10px; /* Внутренние отступы */
+    cursor: pointer;
+    margin-top: 5px; /* Отступ сверху */
+}
+
+.copy-button:hover {
+    background-color: #257943; /* Зелёный цвет фона при наведении */
+}
+
+.footer {
+    background-color: #091426;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    position: absolute; /* Установите абсолютное позиционирование */
+    bottom: 0; /* Переместите вниз */
+    width: 100%; /* Растяните на всю ширину */
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #00f; /* Синий цвет ссылки */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.support-button a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00f; /* Синий цвет кнопки */
+    color: #fff; /* Белый цвет текста кнопки */
+    text-decoration: none;
+    border-radius: 5px; /* Закругляем углы кнопки */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+}
+
+.support-button a:hover {
+    background-color: #0055a4; /* Темно-синий цвет фона кнопки при наведении */
+}
